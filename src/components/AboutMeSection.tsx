@@ -27,8 +27,7 @@ const AboutMeSection: React.FC = () => {
             <div className="-translate-y-[70%] border w-3/5 shadow-md rounded-lg px-6 py-4 bg-gray-100">
 
                 <p className="text-lg max-w-3xl mx-auto text-center">
-                    I’m a Full Stack Developer based in Khonkaen, Thailand. After working as an Automation Engineer for several years, I discovered a passion for web development while building IoT and automation-related systems.
-                    My goal is to transition fully into the field of web development, where I can use my skills in React, Node.js, and other modern technologies to create impactful applications.
+                    I’m a Full Stack Developer based in Khonkaen, Thailand. After working as an Automation Engineer for several years, I developed a growing interest in web development while building IoT and automation-related systems. I’ve worked with diverse codebases from various machines, which helped me improve my problem-solving and system integration skills. I’m now aiming to fully transition into web development, where I hope to apply my skills in React, Node.js, and other modern technologies to create meaningful applications.
                 </p>
             </div>
 
