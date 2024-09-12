@@ -22,18 +22,21 @@ export default function App() {
     window.alert("Contact me");
   }
   return <>
-    <div>
-      <HeroSection
+    <div className="">
+      <div className="bg-gray-700 ">
 
-        scrollToJourney={() => scrollToSection(journeyRef)}
-        scrollToAbout={() => scrollToSection(aboutRef)}
-        scrollToContact={() => contactMe()}
-      />
-      <div ref={aboutRef}>
+        <HeroSection
+
+          scrollToJourney={() => scrollToSection(journeyRef)}
+          scrollToAbout={() => scrollToSection(aboutRef)}
+          scrollToContact={() => contactMe()}
+        />
+      </div>
+      <div  className="bg-gray-200" ref={aboutRef}>
         <AboutMeSection />
       </div>
 
-      <div ref={skillsRef}>
+      <div className="bg-gray-100 " ref={skillsRef}>
         <SkillsSection />
       </div>
 

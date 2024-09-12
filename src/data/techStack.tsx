@@ -12,7 +12,7 @@ import ZustandIcon from "../assets/icons/Frontend/zustand.svg";
 import PiniaIcon from "../assets/icons/Frontend/Pinialogo.svg";
 
 // Backend Icons
-
+import NodeJsIcon from "../assets/icons/Backend/nodejs.svg";
 
 // Factory Automation Icons
 
@@ -36,11 +36,12 @@ export const techStack = [
     {
         category: "Backend",
         stack: [
-            { name: "Node.js", icon: ReactIcon },
+            { name: "Node.js", icon: NodeJsIcon },
             { name: "Express.js", icon: ReactIcon },
             { name: "Node-Red", icon: ReactIcon },
             { name: "MySQL", icon: ReactIcon },
             { name: "Microsoft SQL Server", icon: ReactIcon },
+            { name: "PostgreSQL", icon: ReactIcon },
         ]
     },
     {

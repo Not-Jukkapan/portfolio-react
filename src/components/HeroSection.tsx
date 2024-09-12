@@ -12,7 +12,7 @@ const ButtonStyle = `bg-white text-blue-700 px-6 py-3 rounded-lg shadow-lg`;
 // Hero Section (Introduction)
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollToJourney, scrollToAbout, scrollToContact }) => {
     return (
-        <section className="bg-gray-700 text-white h-screen flex justify-between items-center px-[5%]">
+        <section className="container mx-auto text-white h-screen flex justify-between items-center">
             <div>
                 <h1 className="text-5xl font-bold ">Hello, </h1>
                 <div className="text-5xl font-bold ">I'm Jukkapan Kongjun</div>
