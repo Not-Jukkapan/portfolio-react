@@ -9,7 +9,7 @@ export type TimelineItemType = {
     tech: string[];
 };
 
-export  const timelineData: TimelineItemType[] = [
+export const timelineData: TimelineItemType[] = [
     {
         title: "TURNiX – Full Stack Developer",
         date: "2024",
@@ -48,11 +48,20 @@ export  const timelineData: TimelineItemType[] = [
     },
     {
         title: "RedBull IoT – Data Monitoring System",
-        date: "2021",
+        date: "2022",
         dateText: "2024",
-        field: "automation",
+        field: "webdev",
         description: "Worked on my first IoT project, which introduced me to web technologies like Node-RED and Vue.js.",
         story: "This project sparked my interest in web development. Even though I didn't fully understand components back then, I knew this was the direction I wanted to go.",
-        tech: ["Node-RED", "Vue.js", "IoT"]
+        tech: ["Node-RED", "Vue.js", "IoT", "UI-Builder", "CSV-Logging"]
+    },
+    {
+        title: "Laemthong Food - A",
+        date: "2021",
+        dateText: "2024",
+        field: "webdev",
+        description: "-",
+        story: "This project sparked my interest in web development. Even though I didn't fully understand components back then, I knew this was the direction I wanted to go.",
+        tech: ["Node-RED", "phpMyAdmin", "PHP", "CSV-Logging"]
     },
 ];

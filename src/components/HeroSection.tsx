@@ -1,13 +1,16 @@
 
 type HeroSectionProps = {
 
-    scrollToProjects: () => void;
+
     scrollToJourney: () => void;
     scrollToAbout: () => void;
     scrollToContact: () => void;
 };
+
+const ButtonStyle = `bg-white text-blue-700 px-6 py-3 rounded-lg shadow-lg`;
+
 // Hero Section (Introduction)
-const HeroSection: React.FC<HeroSectionProps> = ({ scrollToProjects, scrollToJourney, scrollToAbout, scrollToContact }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ scrollToJourney, scrollToAbout, scrollToContact }) => {
     return (
         <section className="bg-gray-700 text-white h-screen flex justify-between items-center px-[5%]">
             <div>
@@ -20,16 +23,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToProjects, scrollToJou
 
                 <div className="mt-10 space-x-4 flex">
 
-                    <button onClick={scrollToProjects} className="bg-white text-blue-700 px-6 py-3 rounded-lg shadow-lg hidden">
-                        Projects
-                    </button>
-                    <button onClick={scrollToJourney} className="bg-white text-blue-700 px-6 py-3 rounded-lg shadow-lg">
-                        Journey
-                    </button>
-                    <button onClick={scrollToAbout} className="bg-white text-blue-700 px-6 py-3 rounded-lg shadow-lg">
+                    <button onClick={scrollToAbout} className={ButtonStyle}>
                         About Me
                     </button>
-                    <button onClick={scrollToContact} className="bg-white text-blue-700 px-6 py-3 rounded-lg shadow-lg">
+                    <button onClick={scrollToJourney} className={ButtonStyle}>
+                        Journey
+                    </button>
+
+                    <button onClick={scrollToContact} className={ButtonStyle}>
                         Contact Me
                     </button>
                 </div>

@@ -10,41 +10,37 @@ import TimeLinePage from "./components/TimelinePage";
 export default function App() {
   // Create references for each section
   const skillsRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
+
   const journeyRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
 
   // Function to scroll to a specific section
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
+  const contactMe = () => {
+    window.alert("Contact me");
+  }
   return <>
     <div>
       <HeroSection
-      
-        scrollToProjects={() => scrollToSection(projectsRef)}
+
         scrollToJourney={() => scrollToSection(journeyRef)}
         scrollToAbout={() => scrollToSection(aboutRef)}
-        scrollToContact={() => scrollToSection(contactRef)}
+        scrollToContact={() => contactMe()}
       />
       <div ref={aboutRef}>
         <AboutMeSection />
       </div>
-      {/* Sections */}
+
       <div ref={skillsRef}>
         <SkillsSection />
       </div>
-      {/* <div ref={projectsRef}>
-        <ProjectsSection />
-      </div> */}
+
       <div ref={journeyRef}>
         <TimeLinePage />
       </div>
 
-      <div ref={contactRef}>
-        {/* <ContactSection /> */}
-      </div>
 
       <Footer />
 
