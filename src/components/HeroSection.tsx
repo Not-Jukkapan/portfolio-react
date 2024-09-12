@@ -1,13 +1,13 @@
 
 type HeroSectionProps = {
-    scrollToSkills: () => void;
+
     scrollToProjects: () => void;
     scrollToJourney: () => void;
     scrollToAbout: () => void;
     scrollToContact: () => void;
 };
 // Hero Section (Introduction)
-const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSkills, scrollToProjects, scrollToJourney, scrollToAbout, scrollToContact }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ scrollToProjects, scrollToJourney, scrollToAbout, scrollToContact }) => {
     return (
         <section className="bg-gray-700 text-white h-screen flex justify-between items-center px-[5%]">
             <div>
@@ -34,7 +34,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSkills, scrollToProje
                     </button>
                 </div>
             </div>
-           
+
             <div>
 
             </div>

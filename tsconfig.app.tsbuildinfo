@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/aboutmesection.tsx","./src/components/contactsection.tsx","./src/components/footer.tsx","./src/components/herosection.tsx","./src/components/projectssection.tsx","./src/components/skillsection.tsx","./src/components/timelinepage.tsx","./src/data/timeline.tsx"],"version":"5.6.2"}

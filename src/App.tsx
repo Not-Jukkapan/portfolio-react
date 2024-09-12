@@ -22,7 +22,7 @@ export default function App() {
   return <>
     <div>
       <HeroSection
-        scrollToSkills={() => scrollToSection(skillsRef)}
+      
         scrollToProjects={() => scrollToSection(projectsRef)}
         scrollToJourney={() => scrollToSection(journeyRef)}
         scrollToAbout={() => scrollToSection(aboutRef)}
