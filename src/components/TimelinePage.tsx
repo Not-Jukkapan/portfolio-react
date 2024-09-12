@@ -146,8 +146,8 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ filter, setFilter }) 
 // Year Marker Component
 const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) => {
     return (
-        <div className="flex justify-center items-center mb-6 cursor-pointer" onClick={() => toggleYear(year)}>
-            <span className="text-xl font-bold text-gray-600 bg-white z-10 translate-x-1 border border-white">
+        <div className="flex justify-center items-center mb-6 cursor-pointer" >
+            <span onClick={() => toggleYear(year)} className="text-xl font-bold text-gray-600 bg-white z-10 translate-x-1">
                 {year} {isToggled ? '(Show)' : '(Hide)'}
             </span>
         </div>
