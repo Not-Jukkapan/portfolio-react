@@ -1,4 +1,3 @@
-
 // Frontend Icons
 import ReactIcon from "../assets/icons/Frontend/react.svg";
 import TailwindIcon from "../assets/icons/Frontend/icons8-tailwind-css.svg";
@@ -11,10 +10,20 @@ import QuasarIcon from "../assets/icons/Frontend/Quasar.svg";
 import ZustandIcon from "../assets/icons/Frontend/zustand.svg";
 import PiniaIcon from "../assets/icons/Frontend/Pinialogo.svg";
 
+
 // Backend Icons
 import NodeJsIcon from "../assets/icons/Backend/nodejs.svg";
+import ExpressIcon from "../assets/icons/Backend/express.svg";
+import NodeRedIcon from "../assets/icons/Backend/node-red.svg";
+import MySQLIcon from "../assets/icons/Backend/mysql.svg";
+import SQLServerIcon from "../assets/icons/Backend/sqlserver.svg";
+import PostgresqlIcon from "../assets/icons/Backend/postgresql.svg";
+
 
 // Factory Automation Icons
+import SiemensIcon from "../assets/icons/FactoryAutomation/siemens.svg";
+import WinCCIcon from "../assets/icons/FactoryAutomation/wincc.jpg";
+import WonderwareIcon from "../assets/icons/FactoryAutomation/wonderware.svg";
 
 
 export const techStack = [
@@ -37,21 +46,21 @@ export const techStack = [
         category: "Backend",
         stack: [
             { name: "Node.js", icon: NodeJsIcon },
-            { name: "Express.js", icon: ReactIcon },
-            { name: "Node-Red", icon: ReactIcon },
-            { name: "MySQL", icon: ReactIcon },
-            { name: "Microsoft SQL Server", icon: ReactIcon },
-            { name: "PostgreSQL", icon: ReactIcon },
+            { name: "Express.js", icon: ExpressIcon },
+            { name: "Node-Red", icon: NodeRedIcon },
+            { name: "MySQL", icon: MySQLIcon },
+            { name: "Microsoft SQL Server", icon: SQLServerIcon },
+            { name: "PostgreSQL", icon: PostgresqlIcon },
         ]
     },
     {
         category: "Factory Automation",
         stack: [
-            { name: "PLC Siemens", icon: ReactIcon },
-            { name: "WinCC", icon: ReactIcon },
-            { name: "Wonderware", icon: ReactIcon },
-            { name: "TIA Portal", icon: ReactIcon },
-            { name: "Step 7", icon: ReactIcon },
+            { name: "PLC Siemens", icon: SiemensIcon },
+            { name: "WinCC", icon: WinCCIcon },
+            { name: "Wonderware", icon: WonderwareIcon },
         ]
     }
 ];
+
+

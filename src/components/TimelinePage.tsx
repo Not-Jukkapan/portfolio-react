@@ -55,8 +55,8 @@ const TimeLinePage: React.FC = () => {
     const colorTextLight = (field: string) => field === 'webdev' ? 'text-blue-500' : 'text-green-500';
 
     return (
-        <div className="flex flex-col items-center sm:px-28 py-10">
-            <h2 className="text-3xl font-bold my-6">My Journey</h2>
+        <div className="flex flex-col items-center sm:px-28 py-16 min-h-[105vh] space-y-16">
+            <h2 className="text-6xl font-bold my-6 mt-8 text-gray-800">My Journey</h2>
 
             {/* Order Selection Dropdown */}
             <div className="mb-10">

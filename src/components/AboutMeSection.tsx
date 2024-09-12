@@ -5,8 +5,7 @@ import CVFile from '../assets/CV_Jukkapan_Kongjun_2019_old.pdf';
 const AboutMeSection: React.FC = () => {
     return (
         <section className=" container mx-auto py-16 h-[105vh] flex flex-col justify-around">
-            <h2 className="text-6xl font-bold text-left">About Me</h2>
-
+            <h2 className="text-6xl font-bold text-left translate-x-5 text-gray-800">About Me</h2>
             <div className="self-end flex flex-col space-y-4 items-center -translate-y-10">
                 <img src={ProfileImage} alt="Profile" className="w-96 h-96 rounded-full  object-cover" />
                 <div className='space-y-4 flex flex-col item-center'>
@@ -23,17 +22,12 @@ const AboutMeSection: React.FC = () => {
                 </a>
             </div>
             <div></div>
-
             <div className="-translate-y-[40%] border w-3/5 shadow-md rounded-lg px-10 py-10 bg-gray-100">
 
                 <p className="text-lg max-w-3xl mx-auto text-left">
                     I’m a Full Stack Developer based in Khonkaen, Thailand. After working as an Automation Engineer for several years, I developed a growing interest in web development while building IoT and automation-related systems. I’ve worked with diverse codebases from various machines, which helped me improve my problem-solving and system integration skills. I’m now aiming to fully transition into web development, where I hope to apply my skills in React, Node.js, and other modern technologies to create meaningful applications.
                 </p>
             </div>
-
-
-
-
         </section>
     );
 };

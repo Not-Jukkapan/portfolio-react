@@ -4,12 +4,12 @@ import { techStack } from '../data/techStack';
 const SkillsSection: React.FC = () => {
     return (
         <section className="container mx-auto py-16 h-[105vh] flex flex-col items-around justify-around">
-            <div className="container mx-auto space-y-16 flex flex-col mt-8">
+            <div className="space-y-16 flex flex-col mt-8">
                 <h2 className="text-6xl font-bold text-left mb-10 text-gray-700">Tech-Stack</h2>
 
                 <div className='bg-white px-14 py-8 rounded-xl shadow-md'>
                     {techStack.map((category, catIndex) => (
-                        <div key={catIndex} className="mb-8">
+                        <div key={catIndex} className="mb-16">
                             <h3 className="text-4xl font-semibold mb-6">{category.category}</h3>
 
                             {/* Grid for each tech stack */}
