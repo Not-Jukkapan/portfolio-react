@@ -23,7 +23,7 @@ export default function App() {
   }
   return <>
     <div className="">
-      <div className="bg-gray-700 ">
+      <div className="bg-gray-700">
 
         <HeroSection
 
@@ -40,7 +40,7 @@ export default function App() {
         <SkillsSection />
       </div>
 
-      <div ref={journeyRef}>
+      <div className="bg-gray-50" ref={journeyRef}>
         <TimeLinePage />
       </div>
 

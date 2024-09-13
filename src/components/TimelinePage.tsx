@@ -55,10 +55,10 @@ const TimeLinePage: React.FC = () => {
     };
 
     // Color functions based on the field
-    const colorBg = (field: string) => (field === 'webdev' ? 'bg-blue-700' : 'bg-green-700');
-    const colorBgLight = (field: string) => (field === 'webdev' ? 'bg-blue-100' : 'bg-green-100');
-    const colorText = (field: string) => (field === 'webdev' ? 'text-blue-700' : 'text-green-700');
-    const colorTextLight = (field: string) => (field === 'webdev' ? 'text-blue-500' : 'text-green-500');
+    const colorBg = (field: string) => (field === 'webdev' ? 'bg-blue-700' : 'bg-blue-700');
+    const colorBgLight = (field: string) => (field === 'webdev' ? 'bg-blue-100' : 'bg-blue-100');
+    const colorText = (field: string) => (field === 'webdev' ? 'text-blue-700' : 'text-blue-700');
+    const colorTextLight = (field: string) => (field === 'webdev' ? 'text-blue-500' : 'text-blue-500');
 
     // Keep track of the previous year
     let previousYear = ''; // Declare previousYear here
@@ -175,7 +175,7 @@ const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) 
         justify-start ">
             <span
                 onClick={() => toggleYear(year)}
-                className="text-xl font-bold text-gray-600 bg-white z-10 translate-x-1"
+                className="text-xl font-bold text-gray-600 bg-gray-50 z-10 translate-x-1"
             >
                 {year} {isToggled ? '(Show)' : '(Hide)'}
             </span>
@@ -187,7 +187,7 @@ const TimelineItem: React.FC<TimelineItemProps & { onClick: () => void }> = ({ i
     return (
         <div className={`mb-12 flex w-full ${item.field === 'webdev' ? 'flex-row-reverse lg:translate-x-6' : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} items-center justify-between lg:justify-start`} >
             <div onClick={onClick} className="cursor-pointer lg:w-1/2 lg:px-4 w-5/6">
-                <div className="bg-white p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
+                <div className="bg-gray-50 p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
                     <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">{item.title}</h3>
                     <div className="text-xs sm:text-sm md:text-base text-gray-600">{item.date}</div>
                     <p className="mt-2 text-sm sm:text-base md:text-lg">{item.description}</p>
@@ -232,7 +232,7 @@ const Modal: React.FC<{ isOpen: boolean, onClose: () => void, projectTitle: stri
 
     return (
         <div className="fixed left-0 right-0 -top-16 bottom-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-2/3">
+            <div className="bg-gray-50 rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-2/3">
                 <div className="flex justify-between items-center p-4 border-b">
                     <h2 className="text-xl font-semibold">{projectTitle}</h2>
                     <button onClick={onClose} className="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
