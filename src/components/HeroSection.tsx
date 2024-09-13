@@ -20,8 +20,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToJourney, scrollToAbou
 
     return (
         <section className="container mx-auto text-white h-screen flex relative
-        md:justify-start md:px-8
-        justify-center   items-center px-4 ">
+        md:justify-start md:items-center  md:px-8
+        justify-center   items-center -translate-y-10 px-4 ">
             <img className="absolute inset-0 opacity-10 z-0 w-full h-full object-cover" src={bgIdea} alt="Background" />
 
             <div className={`relative z-10 transition-transform duration-300 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
