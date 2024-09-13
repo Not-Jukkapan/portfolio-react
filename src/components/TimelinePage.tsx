@@ -56,7 +56,11 @@ const TimeLinePage: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center px-4 sm:px-10  py-16 min-h-[105vh] space-y-8 md:space-y-16 overflow-x-hidden">
-            <h2 className="text-6xl font-bold my-6 mt-8 text-gray-800">My Journey</h2>
+            <h2 className="font-bold text-gray-800  
+            lg:text-6xl  lg:my-6 lg:mt-8
+            md:my-4 md:mt-6
+            text-4xl my-2 mt-4
+            ">My Journey</h2>
 
             {/* Order Selection Dropdown */}
             <div className="mb-10">
@@ -187,21 +191,29 @@ const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) 
 // Timeline Item Component
 const TimelineItem: React.FC<TimelineItemProps> = ({ item, index, colorBg, colorText, colorTextLight, colorBgLight }) => {
     return (
-        <div className={`mb-12 flex ${item.field === 'webdev' ? 'flex-row-reverse lg:translate-x-6' : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} items-center w-full`}>
+        <div className={`mb-12 flex  w-full
+        ${item.field === 'webdev'
+                ? 'flex-row-reverse lg:translate-x-6'
+                : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} 
+        items-center 
+        justify-between lg:justify-start
+        `}>
             <div className=" cursor-pointer
             lg:w-1/2 lg:px-4 
             w-5/6 
                     ">
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
-                    <h3 className="text-lg font-bold">{item.title}</h3>
-                    <div className="text-sm text-gray-600">{item.date}</div>
-                    <p className="mt-2">{item.description}</p>
-                    <p className={`mt-4 italic ${colorTextLight(item.field)}`}>{item.story}</p>
+                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">{item.title}</h3>
+                    <div className="text-xs sm:text-sm md:text-base text-gray-600">{item.date}</div>
+                    <p className="mt-2 text-sm sm:text-base md:text-lg">{item.description}</p>
+                    <p className={`mt-4 italic ${colorTextLight(item.field)} text-sm sm:text-base md:text-lg`}>
+                        {item.story}
+                    </p>
                     <div className="flex flex-wrap gap-2 mt-2">
                         {item.tech.map((tech, techIndex) => (
                             <span
                                 key={techIndex}
-                                className={` ${colorBgLight(item.field)} ${colorText(item.field)} px-2 py-1 rounded text-sm`}
+                                className={` ${colorBgLight(item.field)} ${colorText(item.field)} px-2 py-1 rounded text-xs sm:text-sm md:text-base`}
                             >
                                 {tech}
                             </span>
@@ -211,9 +223,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index, colorBg, color
             </div>
 
             {/* Timeline Marker */}
-            <div className={`w-12 h-12 flex items-center justify-center rounded-full ${colorBg(item.field)} text-white shadow-md z-10`}>
+            <div className={`w-12 h-12 flex items-center justify-center rounded-full ${colorBg(item.field)} text-white shadow-md z-10 
+            lg:translate-x-0
+            translate-x-2
+            `}>
                 {index}
             </div>
+
         </div>
     );
 };

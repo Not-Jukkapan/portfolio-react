@@ -3,7 +3,7 @@ import { techStack } from '../data/techStack';
 
 const SkillsSection: React.FC = () => {
   return (
-    <section className="container mx-auto py-16 flex flex-col items-center justify-center px-4 sm:px-8 min-h-screen">
+    <section className="container mx-auto py-16 flex flex-col items-center justify-center px-4 sm:px-8 lg:min-h-[110vh] min-h-screen">
       <h2 className="text-3xl md:text-6xl font-bold text-left mb-10 text-gray-700">Tech-Stack</h2>
 
       <div className="bg-white px-6 sm:px-14 py-8 rounded-xl shadow-md w-full max-w-screen-lg">
