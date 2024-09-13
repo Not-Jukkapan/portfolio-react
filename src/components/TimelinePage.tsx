@@ -185,8 +185,8 @@ const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) 
 
 const TimelineItem: React.FC<TimelineItemProps & { onClick: () => void }> = ({ item, index, colorBg, colorText, colorTextLight, colorBgLight, onClick }) => {
     return (
-        <div className={`mb-12 flex w-full ${item.field === 'webdev' ? 'flex-row-reverse lg:translate-x-6' : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} items-center justify-between lg:justify-start`} onClick={onClick}>
-            <div className="cursor-pointer lg:w-1/2 lg:px-4 w-5/6">
+        <div className={`mb-12 flex w-full ${item.field === 'webdev' ? 'flex-row-reverse lg:translate-x-6' : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} items-center justify-between lg:justify-start`} >
+            <div onClick={onClick} className="cursor-pointer lg:w-1/2 lg:px-4 w-5/6">
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
                     <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">{item.title}</h3>
                     <div className="text-xs sm:text-sm md:text-base text-gray-600">{item.date}</div>

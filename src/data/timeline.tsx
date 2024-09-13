@@ -1,4 +1,7 @@
+// TCP - Redbull
 import Images from '../assets/images/tcp-redbull/alarm.png';
+import Alarm from '../assets/images/tcp-redbull/alarm.png';
+import Chiller from '../assets/images/tcp-redbull/chiller.png';
 
 // Type definitions
 export type TimelineItemType = {
@@ -21,7 +24,7 @@ export const timelineData: TimelineItemType[] = [
         description: "Started working on TURNiX to dive into full-stack development. This project challenged me to learn React and Node.js in a practical way.",
         story: "This was a major turning point for me. I realized how much I enjoy solving complex problems in the web space, and it solidified my desire to transition to web development.",
         tech: ["React", "Node.js", "MySQL", "Zustand"],
-        projectImages: [Images]
+        projectImages: [Alarm, Chiller]
     },
     {
         title: "Rieckermann (Thailand) – Automation Engineer",

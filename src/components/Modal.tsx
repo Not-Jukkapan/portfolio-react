@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 type ModalProps = {
     isOpen: boolean;
     onClose: () => void;
@@ -8,13 +6,6 @@ type ModalProps = {
 };
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, projectName, projectImage }) => {
-    useEffect(() => {
-        const handleEsc = (event: KeyboardEvent) => {
-            if (event.key === "Escape") onClose();
-        };
-        window.addEventListener("keydown", handleEsc);
-        return () => window.removeEventListener("keydown", handleEsc);
-    }, [onClose]);
 
     if (!isOpen) return null;
 
