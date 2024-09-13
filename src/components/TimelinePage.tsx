@@ -55,7 +55,7 @@ const TimeLinePage: React.FC = () => {
     const colorTextLight = (field: string) => field === 'webdev' ? 'text-blue-500' : 'text-green-500';
 
     return (
-        <div className="flex flex-col items-center sm:px-28 py-16 min-h-[105vh] space-y-8 md:space-y-16 overflow-x-hidden">
+        <div className="flex flex-col items-center px-4 sm:px-10  py-16 min-h-[105vh] space-y-8 md:space-y-16 overflow-x-hidden">
             <h2 className="text-6xl font-bold my-6 mt-8 text-gray-800">My Journey</h2>
 
             {/* Order Selection Dropdown */}
@@ -76,7 +76,9 @@ const TimeLinePage: React.FC = () => {
 
             <div className="relative">
                 {/* Vertical Timeline Line */}
-                <div className="absolute left-1/2 w-1 h-full bg-gray-300 z-0" />
+                <div className="absolute bg-gray-300 z-0
+                lg:left-1/2 w-1 h-full 
+                left-8 " />
 
                 {filteredData.map((item, index) => {
                     const year = getYear(item.date);
@@ -169,7 +171,9 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ filter, setFilter }) 
 // Year Marker Component
 const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) => {
     return (
-        <div className="flex justify-center items-center mb-6 cursor-pointer">
+        <div className="flex cursor-pointer
+        lg:justify-center items-center mb-6 
+        justify-start ">
             <span
                 onClick={() => toggleYear(year)}
                 className="text-xl font-bold text-gray-600 bg-white z-10 translate-x-1"
@@ -183,8 +187,11 @@ const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) 
 // Timeline Item Component
 const TimelineItem: React.FC<TimelineItemProps> = ({ item, index, colorBg, colorText, colorTextLight, colorBgLight }) => {
     return (
-        <div className={`mb-12 flex ${item.field === 'webdev' ? 'flex-row-reverse translate-x-6' : 'flex-row -translate-x-6'} items-center w-full`}>
-            <div className="w-1/2 px-4 cursor-pointer">
+        <div className={`mb-12 flex ${item.field === 'webdev' ? 'flex-row-reverse lg:translate-x-6' : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} items-center w-full`}>
+            <div className=" cursor-pointer
+            lg:w-1/2 lg:px-4 
+            w-5/6 
+                    ">
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
                     <h3 className="text-lg font-bold">{item.title}</h3>
                     <div className="text-sm text-gray-600">{item.date}</div>
