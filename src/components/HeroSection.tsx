@@ -52,6 +52,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToJourney, scrollToAbou
             <div>
 
             </div>
+            {/* <FlipCard /> */}
 
         </section>
     );

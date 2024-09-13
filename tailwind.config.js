@@ -5,7 +5,23 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        rotateY: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(360deg)' },
+        },
+      },
+      animation: {
+        'rotate-y': 'rotateY 2s infinite linear',
+      },
+      perspective: {
+        1000: '1000px',
+      },
+      backfaceVisibility: {
+        hidden: 'hidden',
+      },
+    },
   },
   plugins: [],
 }

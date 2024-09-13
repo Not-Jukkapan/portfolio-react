@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { timelineData, TimelineItemType } from "../data/timeline";
 
 type FilterComponentProps = {
@@ -25,11 +25,14 @@ type TimelineItemProps = {
 const TimeLinePage: React.FC = () => {
     const [filter, setFilter] = useState<'all' | 'webdev' | 'automation'>('all');
     const [order, setOrder] = useState<'newToOld' | 'oldToNew'>('newToOld');
-    const [toggledYears, setToggledYears] = useState<string[]>([]); // To keep track of toggled years
+    const [toggledYears, setToggledYears] = useState<string[]>([]);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [selectedProject, setSelectedProject] = useState<{ title: string; images: string[] }>({ title: '', images: [] });
 
+    // Filter timeline data based on the selected filter
     let filteredData = timelineData.filter(item => filter === 'all' || item.field === filter);
 
-    // Reverse the data if "newToOld" is selected
+    // Reverse the data if "oldToNew" is selected
     if (order === 'oldToNew') {
         filteredData = [...filteredData].reverse();
     }
@@ -45,22 +48,24 @@ const TimeLinePage: React.FC = () => {
         setToggledYears(prev => prev.includes(year) ? prev.filter(y => y !== year) : [...prev, year]);
     };
 
-    // Keep track of the previous year
-    let previousYear = '';
-    let projectIndex = 1;
+    // Open modal with selected project's images
+    const openModal = (title: string, images: string[]) => {
+        setSelectedProject({ title, images });
+        setModalOpen(true);
+    };
 
-    const colorBg = (field: string) => field === 'webdev' ? 'bg-blue-700' : 'bg-green-700';
-    const colorBgLight = (field: string) => field === 'webdev' ? 'bg-blue-100' : 'bg-green-100';
-    const colorText = (field: string) => field === 'webdev' ? 'text-blue-700' : 'text-green-700';
-    const colorTextLight = (field: string) => field === 'webdev' ? 'text-blue-500' : 'text-green-500';
+    // Color functions based on the field
+    const colorBg = (field: string) => (field === 'webdev' ? 'bg-blue-700' : 'bg-green-700');
+    const colorBgLight = (field: string) => (field === 'webdev' ? 'bg-blue-100' : 'bg-green-100');
+    const colorText = (field: string) => (field === 'webdev' ? 'text-blue-700' : 'text-green-700');
+    const colorTextLight = (field: string) => (field === 'webdev' ? 'text-blue-500' : 'text-green-500');
+
+    // Keep track of the previous year
+    let previousYear = ''; // Declare previousYear here
 
     return (
-        <div className="flex flex-col items-center px-4 sm:px-10  py-16 min-h-[105vh] space-y-8 md:space-y-16 overflow-x-hidden">
-            <h2 className="font-bold text-gray-800  
-            lg:text-6xl  lg:my-6 lg:mt-8
-            md:my-4 md:mt-6
-            text-4xl my-2 mt-4
-            ">My Journey</h2>
+        <div className="flex flex-col items-center px-4 sm:px-10 py-16 min-h-[105vh] space-y-8 md:space-y-16 overflow-x-hidden">
+            <h2 className="font-bold text-gray-800 lg:text-6xl lg:my-6 lg:mt-8 md:my-4 md:mt-6 text-4xl my-2 mt-4">My Journey</h2>
 
             {/* Order Selection Dropdown */}
             <div className="mb-10">
@@ -80,56 +85,46 @@ const TimeLinePage: React.FC = () => {
 
             <div className="relative">
                 {/* Vertical Timeline Line */}
-                <div className="absolute bg-gray-300 z-0
-                lg:left-1/2 w-1 h-full 
-                left-8 " />
+                <div className="absolute bg-gray-300 z-0 lg:left-1/2 w-1 h-full left-8" />
 
                 {filteredData.map((item, index) => {
                     const year = getYear(item.date);
-                    let displayYear = null;
                     const isToggled = toggledYears.includes(year);
 
-                    // Check if the year is different from the previous entry
+                    // Render year marker if new year is encountered
+                    let displayYear = null;
                     if (year !== previousYear) {
-                        previousYear = year;
-                        displayYear = (
-                            <YearMarker
-                                key={`year-marker-${index}`}
-                                year={year}
-                                isToggled={isToggled}
-                                toggleYear={toggleYear}
-                            />
-                        );
+                        previousYear = year; // Update previousYear to the current one
+                        displayYear = <YearMarker key={`year-marker-${index}`} year={year} isToggled={isToggled} toggleYear={toggleYear} />;
                     }
 
-                    // If the year is toggled (hidden), skip rendering this project
-                    if (isToggled) {
-                        return (
-                            <div key={index}>
-                                {/* Display Year Marker */}
-                                {displayYear}
-                            </div>
-                        );
-                    }
+                    // Skip rendering if the year is toggled
+                    if (isToggled) return <div key={index}>{displayYear}</div>;
 
                     return (
                         <div key={index}>
-                            {/* Display Year Marker */}
                             {displayYear}
-
-                            {/* Timeline Item */}
                             <TimelineItem
                                 item={item}
-                                index={projectIndex++} // Keep index consistent despite hiding/showing
+                                index={index + 1}
                                 colorBg={colorBg}
                                 colorText={colorText}
                                 colorTextLight={colorTextLight}
                                 colorBgLight={colorBgLight}
+                                onClick={() => openModal(item.title, item.projectImages)} // Open modal on click
                             />
                         </div>
                     );
                 })}
             </div>
+
+            {/* Modal for displaying project images */}
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setModalOpen(false)}
+                projectTitle={selectedProject.title}
+                projectImages={selectedProject.images}
+            />
         </div>
     );
 };
@@ -188,20 +183,10 @@ const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) 
     );
 };
 
-// Timeline Item Component
-const TimelineItem: React.FC<TimelineItemProps> = ({ item, index, colorBg, colorText, colorTextLight, colorBgLight }) => {
+const TimelineItem: React.FC<TimelineItemProps & { onClick: () => void }> = ({ item, index, colorBg, colorText, colorTextLight, colorBgLight, onClick }) => {
     return (
-        <div className={`mb-12 flex  w-full
-        ${item.field === 'webdev'
-                ? 'flex-row-reverse lg:translate-x-6'
-                : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} 
-        items-center 
-        justify-between lg:justify-start
-        `}>
-            <div className=" cursor-pointer
-            lg:w-1/2 lg:px-4 
-            w-5/6 
-                    ">
+        <div className={`mb-12 flex w-full ${item.field === 'webdev' ? 'flex-row-reverse lg:translate-x-6' : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} items-center justify-between lg:justify-start`} onClick={onClick}>
+            <div className="cursor-pointer lg:w-1/2 lg:px-4 w-5/6">
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
                     <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">{item.title}</h3>
                     <div className="text-xs sm:text-sm md:text-base text-gray-600">{item.date}</div>
@@ -211,10 +196,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index, colorBg, color
                     </p>
                     <div className="flex flex-wrap gap-2 mt-2">
                         {item.tech.map((tech, techIndex) => (
-                            <span
-                                key={techIndex}
-                                className={` ${colorBgLight(item.field)} ${colorText(item.field)} px-2 py-1 rounded text-xs sm:text-sm md:text-base`}
-                            >
+                            <span key={techIndex} className={`${colorBgLight(item.field)} ${colorText(item.field)} px-2 py-1 rounded text-xs sm:text-sm md:text-base`}>
                                 {tech}
                             </span>
                         ))}
@@ -223,13 +205,46 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index, colorBg, color
             </div>
 
             {/* Timeline Marker */}
-            <div className={`w-12 h-12 flex items-center justify-center rounded-full ${colorBg(item.field)} text-white shadow-md z-10 
-            lg:translate-x-0
-            translate-x-2
-            `}>
+            <div className={`w-12 h-12 flex items-center justify-center rounded-full ${colorBg(item.field)} text-white shadow-md z-10 lg:translate-x-0 translate-x-2`}>
                 {index}
             </div>
+        </div>
+    );
+};
 
+// Modal Component for showing project images
+const Modal: React.FC<{ isOpen: boolean, onClose: () => void, projectTitle: string, projectImages: string[] }> = ({ isOpen, onClose, projectTitle, projectImages }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isOpen])
+    if (!isOpen) return null;
+
+
+
+    return (
+        <div className="fixed left-0 right-0 -top-16 bottom-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-2/3">
+                <div className="flex justify-between items-center p-4 border-b">
+                    <h2 className="text-xl font-semibold">{projectTitle}</h2>
+                    <button onClick={onClose} className="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+                </div>
+                <div className="p-6">
+                    <img src={projectImages[currentImageIndex]} alt={projectTitle} className="w-full h-auto mb-4" />
+                    <div className="flex justify-between items-center">
+                        <button className="disabled:opacity-50" disabled={currentImageIndex === 0} onClick={() => setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : projectImages.length - 1))}>Previous</button>
+                        <button className="disabled:opacity-50" disabled={currentImageIndex === projectImages.length - 1} onClick={() => setCurrentImageIndex((prev) => (prev + 1) % projectImages.length)}>Next</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
