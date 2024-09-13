@@ -19,17 +19,16 @@
 7) March 2022 ATTG - NAWALOHA 
 8) April 2022 - MTT - Monexco
 9) กระทิงแดงวังน้ำเปรี้ยว
+14) Dec 2022 - DTS - BMW -TYSK
 <!-- 2022 -->
 
 <!-- 2023 -->
 10) April 2023 - Mitsu - Emerson- Vibration Logging, Alert
 11) May 2023 - Vonbundit - Logging สักอย่าง
+15) Ajinomoto - Vibration Logging
 12) Sep 2023 - CPF - Betain - วัด Fluid ตอน valve เปิด - Chaiudom
 13) Late 2023 - Betterpharma Dosa
-
 <!-- 2023 -->
 
-14) DTS - BMW -TYSK
 
-15) Ajinomoto - Vibration Logging
 

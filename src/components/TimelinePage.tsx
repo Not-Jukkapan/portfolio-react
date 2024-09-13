@@ -55,13 +55,17 @@ const TimeLinePage: React.FC = () => {
     const colorTextLight = (field: string) => field === 'webdev' ? 'text-blue-500' : 'text-green-500';
 
     return (
-        <div className="flex flex-col items-center sm:px-28 py-16 min-h-[105vh] space-y-16">
+        <div className="flex flex-col items-center sm:px-28 py-16 min-h-[105vh] space-y-8 md:space-y-16">
             <h2 className="text-6xl font-bold my-6 mt-8 text-gray-800">My Journey</h2>
 
             {/* Order Selection Dropdown */}
             <div className="mb-10">
                 <label className="mr-2">Sort Order: </label>
-                <select value={order} onChange={(e) => setOrder(e.target.value as 'newToOld' | 'oldToNew')} className="p-2 border rounded">
+                <select
+                    value={order}
+                    onChange={(e) => setOrder(e.target.value as 'newToOld' | 'oldToNew')}
+                    className="p-2 border rounded"
+                >
                     <option value="newToOld">Newest First</option>
                     <option value="oldToNew">Oldest First</option>
                 </select>
@@ -84,6 +88,7 @@ const TimeLinePage: React.FC = () => {
                         previousYear = year;
                         displayYear = (
                             <YearMarker
+                                key={`year-marker-${index}`}
                                 year={year}
                                 isToggled={isToggled}
                                 toggleYear={toggleYear}
@@ -128,15 +133,33 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ filter, setFilter }) 
     return (
         <div className="flex space-x-4 mb-10">
             <label>
-                <input type="radio" name="filter" value="all" checked={filter === 'all'} onChange={() => setFilter('all')} />
+                <input
+                    type="radio"
+                    name="filter"
+                    value="all"
+                    checked={filter === 'all'}
+                    onChange={() => setFilter('all')}
+                />
                 <span className="ml-2">All</span>
             </label>
             <label>
-                <input type="radio" name="filter" value="webdev" checked={filter === 'webdev'} onChange={() => setFilter('webdev')} />
+                <input
+                    type="radio"
+                    name="filter"
+                    value="webdev"
+                    checked={filter === 'webdev'}
+                    onChange={() => setFilter('webdev')}
+                />
                 <span className="ml-2">Web Development</span>
             </label>
             <label>
-                <input type="radio" name="filter" value="automation" checked={filter === 'automation'} onChange={() => setFilter('automation')} />
+                <input
+                    type="radio"
+                    name="filter"
+                    value="automation"
+                    checked={filter === 'automation'}
+                    onChange={() => setFilter('automation')}
+                />
                 <span className="ml-2">Automation</span>
             </label>
         </div>
@@ -146,8 +169,11 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ filter, setFilter }) 
 // Year Marker Component
 const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) => {
     return (
-        <div className="flex justify-center items-center mb-6 cursor-pointer" >
-            <span onClick={() => toggleYear(year)} className="text-xl font-bold text-gray-600 bg-white z-10 translate-x-1">
+        <div className="flex justify-center items-center mb-6 cursor-pointer">
+            <span
+                onClick={() => toggleYear(year)}
+                className="text-xl font-bold text-gray-600 bg-white z-10 translate-x-1"
+            >
                 {year} {isToggled ? '(Show)' : '(Hide)'}
             </span>
         </div>
@@ -157,16 +183,19 @@ const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) 
 // Timeline Item Component
 const TimelineItem: React.FC<TimelineItemProps> = ({ item, index, colorBg, colorText, colorTextLight, colorBgLight }) => {
     return (
-        <div className={`mb-12 flex ${item.field === 'webdev' ? 'flex-row-reverse translate-x-6' : 'flex-row -translate-x-6'} items-center w-full `}>
-            <div className="w-1/2 px-4 cursor-pointer ">
+        <div className={`mb-12 flex ${item.field === 'webdev' ? 'flex-row-reverse translate-x-6' : 'flex-row -translate-x-6'} items-center w-full`}>
+            <div className="w-1/2 px-4 cursor-pointer">
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
                     <h3 className="text-lg font-bold">{item.title}</h3>
-                    <div className="text-sm text-gray-600">{item.dateText}</div>
+                    <div className="text-sm text-gray-600">{item.date}</div>
                     <p className="mt-2">{item.description}</p>
                     <p className={`mt-4 italic ${colorTextLight(item.field)}`}>{item.story}</p>
                     <div className="flex flex-wrap gap-2 mt-2">
                         {item.tech.map((tech, techIndex) => (
-                            <span key={techIndex} className={` ${colorBgLight(item.field)} ${colorText(item.field)} px-2 py-1 rounded text-sm`}>
+                            <span
+                                key={techIndex}
+                                className={` ${colorBgLight(item.field)} ${colorText(item.field)} px-2 py-1 rounded text-sm`}
+                            >
                                 {tech}
                             </span>
                         ))}
