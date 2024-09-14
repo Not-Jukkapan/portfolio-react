@@ -33,7 +33,7 @@ const TimeLinePage: React.FC = () => {
     let filteredData = timelineData.filter(item => filter === 'all' || item.field === filter);
 
     // Reverse the data if "oldToNew" is selected
-    if (order === 'oldToNew') {
+    if (order === 'newToOld') {
         filteredData = [...filteredData].reverse();
     }
 
@@ -75,8 +75,8 @@ const TimeLinePage: React.FC = () => {
                     onChange={(e) => setOrder(e.target.value as 'newToOld' | 'oldToNew')}
                     className="p-2 border rounded"
                 >
+                    <option value="oldToNew">Oldest First</option> 
                     <option value="newToOld">Newest First</option>
-                    <option value="oldToNew">Oldest First</option>
                 </select>
             </div>
 
@@ -189,7 +189,7 @@ const TimelineItem: React.FC<TimelineItemProps & { onClick: () => void }> = ({ i
             <div onClick={onClick} className="cursor-pointer lg:w-1/2 lg:px-4 w-5/6">
                 <div className="bg-gray-50 p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
                     <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">{item.title}</h3>
-                    <div className="text-xs sm:text-sm md:text-base text-gray-600">{item.date}</div>
+                    <div className="text-xs sm:text-sm md:text-base text-gray-600">{item.dateText}</div>
                     <p className="mt-2 text-sm sm:text-base md:text-lg">{item.description}</p>
                     <p className={`mt-4 italic ${colorTextLight(item.field)} text-sm sm:text-base md:text-lg`}>
                         {item.story}
