@@ -25,7 +25,7 @@ export const timelineData: TimelineItemType[] = [
       "Supporting senior engineers and technical sales in early tasks, laying the foundation for real-world problem-solving and system compatibility knowledge.",
     story:
       "My entry into the world of automation. Though my tasks were junior-level, I learned valuable lessons in adaptability and problem-solving by observing senior engineers in action. This set the stage for my technical growth and problem-solving mindset.",
-    tech: ["SCADA", "Technical Documentation", "System Compatibility"],
+    tech: [],
     projectImages: [Images],
   },
   {
@@ -37,7 +37,7 @@ export const timelineData: TimelineItemType[] = [
       "System migration project upgrading an old PLC (SLC500) to S7-1515T with new S120 servo motors and implementing remote HMI for machine configuration and control.",
     story:
       "My first major project in automation. I handled PLC programming and system integration, overcoming delays and errors through collaboration with senior engineers. Working under COVID-19 pressures, I learned the importance of problem-solving, communication, and adaptability.",
-    tech: ["S7-1515T PLC", "S120 Servo Motors", "Remote-HMI", "Automation"],
+    tech: ["PLC", "Servo Motors", "HMI", "Automation"],
     projectImages: [Images],
   },
   {
@@ -50,9 +50,9 @@ export const timelineData: TimelineItemType[] = [
     story:
       "My first international collaboration, where I coordinated between engineers from different countries to troubleshoot a spray robot system. The project faced material specification issues, but through problem-solving and persistence, we completed the task despite delays.",
     tech: [
-      "Robot Commissioning",
-      "Remote Collaboration",
-      "Sprayer System",
+      "Robot",
+      "Remote Support",
+      "Commissioning",
       "WinCC Advacned",
       "Automation",
     ],
@@ -97,7 +97,7 @@ export const timelineData: TimelineItemType[] = [
       "Testing motor systems for BTS train maintenance, focusing on Hipot, winding resistance, temperature, vibration, and sound frequency. Involved communication via RS232 and data logging using SQL.",
     story:
       "This project involved motor testing for BTS trains and introduced me to RS232 communication and SQL for data logging. I applied VBScript communication logic to connect equipment to the PLC and laptop, while overcoming challenges with electrical trips and inverter tuning.",
-    tech: ["RS232", "SQL", "SCADA", "Motor Testing", "PLC"],
+    tech: ["RS232", "SQL", "SCADA", "PLC"],
     projectImages: [Images],
   },
   {
@@ -121,7 +121,7 @@ export const timelineData: TimelineItemType[] = [
       "Automation project to control the frying system for a chicken production line, including first exposure to PID tuning and multidisciplinary teamwork.",
     story:
       "This project involved working on a fryer chicken machine with the JBT team. It was my first time using PID tuning to control oil temperature and taught me the importance of understanding both electrical and mechanical systems in addition to programming. Communication was handled via walkie-talkies due to low phone signal in the area.",
-    tech: ["PID Tuning", "Automation", "Control Systems", "Electrical Systems"],
+    tech: ["PID Tuning", "Automation", "PLC"],
     projectImages: [Images],
   },
   {
@@ -133,7 +133,7 @@ export const timelineData: TimelineItemType[] = [
       "Improved production tracking by integrating SCADA signals with an MSSQL database, enabling the factory to analyze material usage and batch results.",
     story:
       "This project marked my first experience with SQL and VBScript. I was responsible for correcting SCADA code, tapping into signals, and integrating the data into an SQL database to track material usage. It was also a significant leadership experience, as I was the sole engineer on the project after my senior left.",
-    tech: ["SCADA", "SQL", "VBScript", "CRUD Operations", "Automation"],
+    tech: ["SCADA", "SQL", "VBScript",  "Automation"],
     projectImages: [Images],
   },
   {
@@ -145,14 +145,14 @@ export const timelineData: TimelineItemType[] = [
       "Migrated a material mixing system from S7-300 to S7-1500 and updated the HMI, overcoming challenges with missing source code and equipment malfunctions.",
     story:
       "This was my first fully hands-on technical project, where I migrated a system and updated the HMI. I faced challenges with missing source code, broken equipment, and an inverter explosion, but I completed the project successfully. This experience taught me how to handle high-pressure situations and work independently.",
-    tech: ["S7-1500", "S7-300", "HMI", "Automation", "Control Systems"],
+    tech: ["S7-1500", "S7-300", "HMI", "Automation"],
     projectImages: [Images],
   },
   {
     title: "TCP กระทิงแดง (Red Bull IoT Project)",
     date: "April 2022",
     dateText: "April 2022",
-    field: "automation",
+    field: "webdev",
     description:
       "Implemented a web-based real-time monitoring and control system using Siemens IoT2000, Node-RED, Vue 2, and SVG visualizations for monitoring production equipment at Red Bull’s factory.",
     story:
@@ -177,7 +177,7 @@ export const timelineData: TimelineItemType[] = [
       "Commissioned and adjusted HMI systems for an electric car battery assembly line, collaborating with a European team under BMW's rigorous TMO standards.",
     story:
       "This was a particularly challenging project due to the language barriers and the strict BMW TMO standards. Working with a European team from Thyssenkrupp, DTS, and BMW, I had to adapt quickly and learn how to meet world-class standards. Despite the challenges, I successfully completed the project, gaining valuable experience in international collaboration and troubleshooting complex systems.",
-    tech: ["HMI", "TMO Standards", "Automation"],
+    tech: ["HMI",  "Commissioning", "Automation"],
     projectImages: [Images],
   },
   {
@@ -195,7 +195,6 @@ export const timelineData: TimelineItemType[] = [
       "Node-RED",
       "Vue",
       "ThingWorx",
-      "Vibration Sensors",
     ],
     projectImages: [Images],
   },
@@ -203,24 +202,24 @@ export const timelineData: TimelineItemType[] = [
     title: "Vonbundit (Data Logging and Monitoring System)",
     date: "May 2023",
     dateText: "May 2023",
-    field: "automation",
+    field: "webdev",
     description:
       "Implemented a data logging and monitoring system with historian trend visualization and CSV export functionality using MSSQL, Node-RED, and Vue 2.",
     story:
       "This project involved setting up a data logging and monitoring system for Vonbundit. It used a familiar stack—MSSQL, Node-RED, and Vue 2—and was built by adjusting and reusing code from previous projects. While it didn’t present new challenges, it reinforced the importance of writing adaptable code that can be reused across multiple projects.",
-    tech: ["MSSQL", "Node-RED", "Vue 2", "Data Logging", "CSV Export"],
+    tech: ["MSSQL", "Node-RED", "Vue 2"],
     projectImages: [Images],
   },
   {
     title: "Ajinomoto (Vibration Logging and Monitoring System)",
     date: "2023",
     dateText: "2023",
-    field: "automation",
+    field: "webdev",
     description:
       "Implemented a vibration logging and monitoring system with historian trend visualization and CSV export using PostgreSQL after migrating from MSSQL due to configuration issues.",
     story:
       "This project initially faced issues with setting up MSSQL, so I decided to switch to PostgreSQL, a database I learned about during a previous project. After successfully migrating the system, the project continued smoothly. Although small in scope, it broadened my database management skills and taught me the importance of adaptability.",
-    tech: ["PostgreSQL", "Node-RED", "Vue 2", "Data Logging", "CSV Export"],
+    tech: ["PostgreSQL", "Node-RED", "Vue 2"],
     projectImages: [Images],
   },
   {
@@ -232,7 +231,7 @@ export const timelineData: TimelineItemType[] = [
       "Developed a fluid measurement system using Vue 3, Node.js with Express for backend API, and MSSQL for the database. Switched from Vuetify to Quasar for UI components.",
     story:
       "This project marked my first full-stack development experience, where I moved away from using Node-RED and uibuilder. I built the frontend using Quasar after facing limitations with Vuetify for Vue 3. On the backend, I created an API from scratch using Node.js and Express, a significant challenge after relying on low-code tools in the past. Despite the difficulties, I completed the project successfully.",
-    tech: ["Vue 3", "Quasar", "Node.js", "Express", "MSSQL", "API Development"],
+    tech: ["Vue 3", "Quasar", "Node.js", "Express", "MSSQL"],
     projectImages: [Images],
   },
   {
@@ -265,15 +264,9 @@ export const timelineData: TimelineItemType[] = [
     story:
       "After years of working in automation, I decided to fully commit to my passion for web development. I enrolled in a bootcamp that helped me solidify the skills I had been exploring in my free time. This decision allowed me to focus on honing my frontend and backend development abilities and take the next step in my career.",
     tech: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Node.js",
-      "React",
-      "Vue",
-      "Full-Stack Development",
+     
     ],
-    projectImages: [Images],
+    projectImages: [],
   },
   {
     title: "Turnixx (Full-Stack Development Project)",
