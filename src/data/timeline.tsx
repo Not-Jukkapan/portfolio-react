@@ -1,160 +1,300 @@
 // TCP - Redbull
-import Images from '../assets/images/tcp-redbull/alarm.png';
-import Alarm from '../assets/images/tcp-redbull/alarm.png';
-import Chiller from '../assets/images/tcp-redbull/chiller.png';
+import Images from "../assets/images/tcp-redbull/alarm.png";
+import Alarm from "../assets/images/tcp-redbull/alarm.png";
+import Chiller from "../assets/images/tcp-redbull/chiller.png";
 
 // Type definitions
 export type TimelineItemType = {
-    title: string;
-    date: string;
-    dateText: string;
-    field: 'webdev' | 'automation';
-    description: string;
-    story: string;
-    tech: string[];
-    projectImages: string[];
+  title: string;
+  date: string;
+  dateText: string;
+  field: "webdev" | "automation";
+  description: string;
+  story: string;
+  tech: string[];
+  projectImages: string[];
 };
 
 export const timelineData: TimelineItemType[] = [
-    {
-        title: "3K Battery",
-        date: "2019 - 2020",
-        dateText: "2019 - 2020",
-        field: "automation",
-        description: "Battery automation project focusing on quality control systems.",
-        story: "This project laid the groundwork for my experience in battery manufacturing automation.",
-        tech: ["PLC", "HMI", "S120", "Automation"],
-        projectImages: [Images],
-    },
-    {
-        title: "Gislotica Spray Robot - Continental",
-        date: "2020",
-        dateText: "October 2020",
-        field: "automation",
-        description: "Developed and integrated spray robot systems for automation.",
-        story: "This project was challenging due to the precision required in robotic arm movements and spray calibration.",
-        tech: ["PLC", "Robotics", "Automation"],
-        projectImages: [Images],
-    },
-    {
-        title: "Laemthong IoT - Webdev",
-        date: "2021",
-        dateText: "February 2021",
-        field: "webdev",
-        description: "Developed an IoT-based monitoring system for Laemthong Food Factory.",
-        story: "This was my introduction to IoT systems and web development.",
-        tech: ["Node-RED", "PHP", "Web Development", "Integration", "PLC"],
-        projectImages: [Images],
-    },
-    {
-        title: "Motor Test Stand AMR-BTS",
-        date: "2021",
-        dateText: "March 2021",
-        field: "automation",
-        description: "Implemented motor testing and control systems.",
-        story: "A highly technical project that involved complex system diagnostics and troubleshooting.",
-        tech: ["PLC", "Motor Testing", "Automation"],
-        projectImages: [Images],
-    },
-    {
-        title: "ATTG - NAWALOHA",
-        date: "2022",
-        dateText: "March 2022",
-        field: "automation",
-        description: "Implemented automation systems for ATTG's manufacturing process.",
-        story: "This project further honed my skills in troubleshooting and optimizing industrial automation.",
-        tech: ["PLC", "SCADA"],
-        projectImages: [Images],
-    },
-    {
-        title: "Cardinal Health",
-        date: "2021",
-        dateText: "Late 2021",
-        field: "automation",
-        description: "Worked on automation systems for medical devices.",
-        story: "This project taught me about automation in the healthcare sector and the precision required.",
-        tech: ["PLC", "Automation", "Medical Devices"],
-        projectImages: [Images],
-    },
-    {
-        title: "RedBull IoT – Data Monitoring System",
-        date: "2022",
-        dateText: "2022",
-        field: "webdev",
-        description: "Worked on my first IoT project, which introduced me to web technologies like Node-RED and Vue.js.",
-        story: "This project sparked my interest in web development. Even though I didn't fully understand components back then, I knew this was the direction I wanted to go.",
-        tech: ["Node-RED", "Vue.js", "IoT", "UI-Builder", "CSV-Logging"],
-        projectImages: [Images],
-    },
-    {
-        title: "MTT - Monexco",
-        date: "2022",
-        dateText: "April 2022",
-        field: "automation",
-        description: "Focused on process automation for industrial systems.",
-        story: "This project challenged me to work on improving system performance and reliability.",
-        tech: ["PLC", "SCADA"],
-        projectImages: [Images],
-    },
-    {
-        title: "DTS - BMW - TYSK",
-        date: "2022",
-        dateText: "December 2022",
-        field: "automation",
-        description: "Automated testing systems for BMW manufacturing.",
-        story: "A high-pressure project with strict deadlines, but it helped me grow in managing complex automation systems.",
-        tech: ["PLC", "SCADA", "Automation"],
-        projectImages: [Images],
-    },
-    {
-        title: "Mitsu - Emerson - Vibration Logging, Alert",
-        date: "2023",
-        dateText: "April 2023",
-        field: "webdev",
-        description: "Developed a vibration monitoring system with real-time alerts.",
-        story: "This project deepened my understanding of sensor integration and real-time data monitoring.",
-        tech: ["PLC", "Vibration Sensors", "Data Logging"],
-        projectImages: [Images],
-    },
-    {
-        title: "Vonbundit – Full Stack Developer",
-        date: "2023",
-        dateText: "May 2023",
-        field: "webdev",
-        description: "Implemented a logging system for a manufacturing company, focusing on real-time data collection and analysis.",
-        story: "This project was pivotal in enhancing my skills in managing large datasets and improving system performance.",
-        tech: ["Vue", "Node-RED", "SQL Server"],
-        projectImages: [Images],
-    },
-    {
-        title: "Ajinomoto - Vibration Logging",
-        date: "2023",
-        dateText: "2023",
-        field: "webdev",
-        description: "Developed a vibration monitoring and logging system for industrial machines.",
-        story: "I worked with vibration data and alert systems to enhance machinery maintenance.",
-        tech: ["PLC", "Vibration Sensors", "Automation"],
-        projectImages: [Images],
-    },
-    {
-        title: "Betain CPF – Full Stack Developer",
-        date: "2023",
-        dateText: "September 2023",
-        field: "webdev",
-        description: "Developed a real-time monitoring system using Vue and Node.js. Focused on backend systems and database management.",
-        story: "This project gave me valuable backend experience, which helped round out my full-stack skills. Working with real-time data made me appreciate the complexities of backend architecture.",
-        tech: ["Vue", "Node.js", "SQL Server"],
-        projectImages: [Images],
-    },
-    {
-        title: "TURNiX – Full Stack Developer",
-        date: "2024",
-        dateText: "2024",
-        field: "webdev",
-        description: "Started working on TURNiX to dive into full-stack development. This project challenged me to learn React and Node.js in a practical way.",
-        story: "This was a major turning point for me. I realized how much I enjoy solving complex problems in the web space, and it solidified my desire to transition to web development.",
-        tech: ["React", "Node.js", "MySQL", "Zustand"],
-        projectImages: [Alarm, Chiller],
-    },
+  {
+    title: "First Month at Rieckermann",
+    date: "August 2019",
+    dateText: "August 2019",
+    field: "automation",
+    description:
+      "Supporting senior engineers and technical sales in early tasks, laying the foundation for real-world problem-solving and system compatibility knowledge.",
+    story:
+      "My entry into the world of automation. Though my tasks were junior-level, I learned valuable lessons in adaptability and problem-solving by observing senior engineers in action. This set the stage for my technical growth and problem-solving mindset.",
+    tech: ["SCADA", "Technical Documentation", "System Compatibility"],
+    projectImages: [Images],
+  },
+  {
+    title: "3K Battery (Thai Energy Storage Welder Machine)",
+    date: "2019 - 2020",
+    dateText: "2019 - 2020",
+    field: "automation",
+    description:
+      "System migration project upgrading an old PLC (SLC500) to S7-1515T with new S120 servo motors and implementing remote HMI for machine configuration and control.",
+    story:
+      "My first major project in automation. I handled PLC programming and system integration, overcoming delays and errors through collaboration with senior engineers. Working under COVID-19 pressures, I learned the importance of problem-solving, communication, and adaptability.",
+    tech: ["S7-1515T PLC", "S120 Servo Motors", "Remote-HMI", "Automation"],
+    projectImages: [Images],
+  },
+  {
+    title: "Gislotica Spray Robot - Continental",
+    date: "October 2020",
+    dateText: "October 2020",
+    field: "automation",
+    description:
+      "Remote commissioning of a spray robot system for Continental, acting as the middleman between Gislotica (Portugal) and Continental engineers.",
+    story:
+      "My first international collaboration, where I coordinated between engineers from different countries to troubleshoot a spray robot system. The project faced material specification issues, but through problem-solving and persistence, we completed the task despite delays.",
+    tech: [
+      "Robot Commissioning",
+      "Remote Collaboration",
+      "Sprayer System",
+      "WinCC Advacned",
+      "Automation",
+    ],
+    projectImages: [Images],
+  },
+  {
+    title: "Siemens IOT2000 Presentation",
+    date: "2020",
+    dateText: "2020",
+    field: "automation",
+    description:
+      "Introduction to Siemens IOT2000 series, which showcased the integration of industrial communication systems with modern IoT platforms, sparking my interest in web development.",
+    story:
+      "This presentation was the turning point in my journey, showing me the potential of connecting industrial automation systems with web-based interfaces through tools like Node-RED and IoT devices. It was the first time I saw how my skills in automation could translate into the world of web development.",
+    tech: [
+      "IOT2000",
+      "Node-RED",
+      "S7-PLC",
+      "Modbus",
+      "Industrial Communication",
+    ],
+    projectImages: [Images],
+  },
+  {
+    title: "Laemthong IoT - Webdev",
+    date: "February 2021",
+    dateText: "February 2021",
+    field: "webdev",
+    description:
+      "A project for monitoring production yield, centralizing data storage, and generating reports for a factory using Apache, PHP, and MySQL.",
+    story:
+      "This was my first project where I developed a web-based system for monitoring production yield. I set up a local server with Apache, used a PHP-based admin template for login, and integrated data from Node-RED. It was a small project but marked my first deep dive into web development.",
+    tech: ["Apache", "Node-RED", "PHP", "MySQL", "HTML", "CSS", "PLC"],
+    projectImages: [Images],
+  },
+  {
+    title: "Motor Test Stand AMR-BTS",
+    date: "March 2021",
+    dateText: "March 2021",
+    field: "automation",
+    description:
+      "Testing motor systems for BTS train maintenance, focusing on Hipot, winding resistance, temperature, vibration, and sound frequency. Involved communication via RS232 and data logging using SQL.",
+    story:
+      "This project involved motor testing for BTS trains and introduced me to RS232 communication and SQL for data logging. I applied VBScript communication logic to connect equipment to the PLC and laptop, while overcoming challenges with electrical trips and inverter tuning.",
+    tech: ["RS232", "SQL", "SCADA", "Motor Testing", "PLC"],
+    projectImages: [Images],
+  },
+  {
+    title: "Cardinal Health Commissioning",
+    date: "Late 2021",
+    dateText: "Late 2021",
+    field: "automation",
+    description:
+      "Remote commissioning support for an auto-transfer groves machine, collaborating with a Malaysian team to improve machine performance.",
+    story:
+      "This project involved working with a multicultural team and monitoring SCADA systems during night shifts. It was a physically and mentally challenging experience, but it helped me improve my English communication skills and develop resilience in demanding work conditions.",
+    tech: ["SCADA", "Remote Commissioning", "Automation"],
+    projectImages: [Images],
+  },
+  {
+    title: "JBT - McKey (Fried Chicken Machine)",
+    date: "early 2022",
+    dateText: "2022",
+    field: "automation",
+    description:
+      "Automation project to control the frying system for a chicken production line, including first exposure to PID tuning and multidisciplinary teamwork.",
+    story:
+      "This project involved working on a fryer chicken machine with the JBT team. It was my first time using PID tuning to control oil temperature and taught me the importance of understanding both electrical and mechanical systems in addition to programming. Communication was handled via walkie-talkies due to low phone signal in the area.",
+    tech: ["PID Tuning", "Automation", "Control Systems", "Electrical Systems"],
+    projectImages: [Images],
+  },
+  {
+    title: "ATTG - NAWALOHA",
+    date: "March 2022",
+    dateText: "March 2022",
+    field: "automation",
+    description:
+      "Improved production tracking by integrating SCADA signals with an MSSQL database, enabling the factory to analyze material usage and batch results.",
+    story:
+      "This project marked my first experience with SQL and VBScript. I was responsible for correcting SCADA code, tapping into signals, and integrating the data into an SQL database to track material usage. It was also a significant leadership experience, as I was the sole engineer on the project after my senior left.",
+    tech: ["SCADA", "SQL", "VBScript", "CRUD Operations", "Automation"],
+    projectImages: [Images],
+  },
+  {
+    title: "MTT - Monexco (S7-300 to S7-1500 Migration)",
+    date: "April 2022",
+    dateText: "April 2022",
+    field: "automation",
+    description:
+      "Migrated a material mixing system from S7-300 to S7-1500 and updated the HMI, overcoming challenges with missing source code and equipment malfunctions.",
+    story:
+      "This was my first fully hands-on technical project, where I migrated a system and updated the HMI. I faced challenges with missing source code, broken equipment, and an inverter explosion, but I completed the project successfully. This experience taught me how to handle high-pressure situations and work independently.",
+    tech: ["S7-1500", "S7-300", "HMI", "Automation", "Control Systems"],
+    projectImages: [Images],
+  },
+  {
+    title: "TCP กระทิงแดง (Red Bull IoT Project)",
+    date: "April 2022",
+    dateText: "April 2022",
+    field: "automation",
+    description:
+      "Implemented a web-based real-time monitoring and control system using Siemens IoT2000, Node-RED, Vue 2, and SVG visualizations for monitoring production equipment at Red Bull’s factory.",
+    story:
+      "This project marked my first professional use of IoT2000. I integrated Vue 2 with Node-RED’s UI-Builder to create custom web pages for real-time data visualization and control. Leveraging SVG for machine status and sensor data, I built a SCADA-like interface that allowed for real-time monitoring of equipment without data storage, focusing on immediate machine control and status updates.",
+    tech: [
+      "Siemens IoT2000",
+      "Node-RED",
+      "Vue 2",
+      "SVG",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+    projectImages: [Images],
+  },
+  {
+    title: "DTS - BMW - TYSK (Electric Car Battery Commissioning)",
+    date: "December 2022",
+    dateText: "December 2022",
+    field: "automation",
+    description:
+      "Commissioned and adjusted HMI systems for an electric car battery assembly line, collaborating with a European team under BMW's rigorous TMO standards.",
+    story:
+      "This was a particularly challenging project due to the language barriers and the strict BMW TMO standards. Working with a European team from Thyssenkrupp, DTS, and BMW, I had to adapt quickly and learn how to meet world-class standards. Despite the challenges, I successfully completed the project, gaining valuable experience in international collaboration and troubleshooting complex systems.",
+    tech: ["HMI", "TMO Standards", "Automation"],
+    projectImages: [Images],
+  },
+  {
+    title: "Mitsubishi - Emerson (Vibration Logging and ThingWorx Integration)",
+    date: "April 2023",
+    dateText: "April 2023",
+    field: "automation",
+    description:
+      "Developed a vibration logging system with alerts and data integration into ThingWorx using Emerson’s MoviconNext software and MSSQL.",
+    story:
+      "This project involved building a vibration logging system using Emerson’s MoviconNext software. While the initial demo passed testing, performance issues arose due to hardware limitations (a low-spec touch PC). Despite trying to rebuild the system with Node-RED and Vue, the project didn’t meet the deadline, and it ended up requiring a hardware upgrade. This project taught me valuable lessons about optimizing systems for hardware limitations and avoiding overcomplicating solutions.",
+    tech: [
+      "MoviconNext",
+      "MSSQL",
+      "Node-RED",
+      "Vue",
+      "ThingWorx",
+      "Vibration Sensors",
+    ],
+    projectImages: [Images],
+  },
+  {
+    title: "Vonbundit (Data Logging and Monitoring System)",
+    date: "May 2023",
+    dateText: "May 2023",
+    field: "automation",
+    description:
+      "Implemented a data logging and monitoring system with historian trend visualization and CSV export functionality using MSSQL, Node-RED, and Vue 2.",
+    story:
+      "This project involved setting up a data logging and monitoring system for Vonbundit. It used a familiar stack—MSSQL, Node-RED, and Vue 2—and was built by adjusting and reusing code from previous projects. While it didn’t present new challenges, it reinforced the importance of writing adaptable code that can be reused across multiple projects.",
+    tech: ["MSSQL", "Node-RED", "Vue 2", "Data Logging", "CSV Export"],
+    projectImages: [Images],
+  },
+  {
+    title: "Ajinomoto (Vibration Logging and Monitoring System)",
+    date: "2023",
+    dateText: "2023",
+    field: "automation",
+    description:
+      "Implemented a vibration logging and monitoring system with historian trend visualization and CSV export using PostgreSQL after migrating from MSSQL due to configuration issues.",
+    story:
+      "This project initially faced issues with setting up MSSQL, so I decided to switch to PostgreSQL, a database I learned about during a previous project. After successfully migrating the system, the project continued smoothly. Although small in scope, it broadened my database management skills and taught me the importance of adaptability.",
+    tech: ["PostgreSQL", "Node-RED", "Vue 2", "Data Logging", "CSV Export"],
+    projectImages: [Images],
+  },
+  {
+    title: "CPF - Betain (Fluid Measurement and Control System)",
+    date: "September 2023",
+    dateText: "September 2023",
+    field: "webdev",
+    description:
+      "Developed a fluid measurement system using Vue 3, Node.js with Express for backend API, and MSSQL for the database. Switched from Vuetify to Quasar for UI components.",
+    story:
+      "This project marked my first full-stack development experience, where I moved away from using Node-RED and uibuilder. I built the frontend using Quasar after facing limitations with Vuetify for Vue 3. On the backend, I created an API from scratch using Node.js and Express, a significant challenge after relying on low-code tools in the past. Despite the difficulties, I completed the project successfully.",
+    tech: ["Vue 3", "Quasar", "Node.js", "Express", "MSSQL", "API Development"],
+    projectImages: [Images],
+  },
+  {
+    title: "Betterpharma Dosa (SCADA System Migration from XP to 11)",
+    date: "Late 2023",
+    dateText: "Late 2023",
+    field: "automation",
+    description:
+      "Migrated a complex batch control system from Windows XP to 11, updating the SCADA system, communication protocols, and Delphi applications. Integrated OPC software to solve communication issues between Wonderware and PLCs.",
+    story:
+      "This was the most difficult project of my career, migrating a legacy system that had been running since 2005 to modern hardware. The project involved adapting outdated Delphi programs, changing communication protocols from Profibus to Profinet, and updating Wonderware tags to fit the new system architecture. Despite the immense challenges, we completed the project successfully, working late nights to ensure the system was operational.",
+    tech: [
+      "Windows 11",
+      "SCADA",
+      "Wonderware",
+      "Delphi 7",
+      "OPC Software",
+      "S7-400 PLC",
+      "Profinet",
+    ],
+    projectImages: [Images],
+  },
+  {
+    title: "Transition to Full-Stack Development",
+    date: "February 2024",
+    dateText: "February 2024",
+    field: "webdev",
+    description:
+      "Left my job to attend a full-stack development bootcamp, focusing on solidifying my frontend and backend skills while transitioning from automation engineering.",
+    story:
+      "After years of working in automation, I decided to fully commit to my passion for web development. I enrolled in a bootcamp that helped me solidify the skills I had been exploring in my free time. This decision allowed me to focus on honing my frontend and backend development abilities and take the next step in my career.",
+    tech: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "React",
+      "Vue",
+      "Full-Stack Development",
+    ],
+    projectImages: [Images],
+  },
+  {
+    title: "Turnixx (Full-Stack Development Project)",
+    date: "May - September 2024",
+    dateText: "May - September 2024",
+    field: "webdev",
+    description:
+      "Built a full-stack book exchange platform using React, TypeScript, Node-Express, MySQL, and Zustand. Integrated OpenLibrary API for book data and used Prisma to manage the database.",
+    story:
+      "Turnixx was my first full-stack project, planned for two months but extended to four. I struggled initially with backend SQL commands and frontend design, but switching to Prisma and using TailwindCSS helped me overcome these obstacles. This project solidified my knowledge in building complete web applications, from backend APIs to frontend UI, and managing state with Zustand.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Node-Express",
+      "Prisma",
+      "MySQL",
+      "TailwindCSS",
+      "Zustand",
+      "JWT",
+      "OpenLibrary API",
+    ],
+    projectImages: [Alarm, Chiller],
+  },
 ];
-
