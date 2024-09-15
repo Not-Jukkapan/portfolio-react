@@ -1,5 +1,6 @@
 import ProfileImage from '../assets/profile-removebg-preview.png';
-import CVFile from '../assets/CV_Jukkapan_Kongjun_2019_old.pdf';
+// import CVFile from '../assets/CV_Jukkapan_Kongjun_2019_old.pdf';
+import CVFile from '../assets/Jukkapan Kongjun - Full Stack Web Developer - Resume.pdf';
 
 const AboutMeSection: React.FC = () => {
     return (
