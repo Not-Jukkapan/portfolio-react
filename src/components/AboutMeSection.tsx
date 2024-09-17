@@ -1,6 +1,7 @@
 import ProfileImage from '../assets/profile-removebg-preview.png';
 // import CVFile from '../assets/CV_Jukkapan_Kongjun_2019_old.pdf';
-import CVFile from '../assets/Jukkapan Kongjun - Full Stack Web Developer - Resume.pdf';
+// import CVFile from '../assets/Jukkapan Kongjun - Full Stack Web Developer - Resume.pdf';
+import CVFile from '../assets/Jukkapan Kongjun - Fullstack Web Developer - Resume.pdf';
 
 const AboutMeSection: React.FC = () => {
     return (
@@ -15,7 +16,7 @@ const AboutMeSection: React.FC = () => {
                         <span className="px-2">Digital Transformation</span>
                     </div>
                 </div>
-                <a href={CVFile} download="CV_Jukkapan_Kongjun_2019_old.pdf" className="bg-gray-500 rounded-lg px-6 py-2 font-bold text-white cursor-pointer hover:bg-gray-600">
+                <a href={CVFile} download="CV_Jukkapan_Kongjun_Webdev.pdf" className="bg-gray-500 rounded-lg px-6 py-2 font-bold text-white cursor-pointer hover:bg-gray-600">
                     Download CV
                 </a>
             </div>
