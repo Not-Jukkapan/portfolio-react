@@ -3,6 +3,14 @@ import Images from "../assets/images/tcp-redbull/alarm.png";
 import Alarm from "../assets/images/tcp-redbull/alarm.png";
 import Chiller from "../assets/images/tcp-redbull/chiller.png";
 
+// Turnixx
+import TurnixxLanding from "../assets/images/turnixx/landing.png";
+import TurnixxExplore from "../assets/images/turnixx/explore.png";
+import TurnixxProduct from "../assets/images/turnixx/product-detail.png";
+import TurnixxLogin from "../assets/images/turnixx/login.png";
+import TurnixxAccount from "../assets/images/turnixx/account.png";
+
+
 // Type definitions
 export type TimelineItemType = {
   title: string;
@@ -26,7 +34,7 @@ export const timelineData: TimelineItemType[] = [
     story:
       "My entry into the world of automation. Though my tasks were junior-level, I learned valuable lessons in adaptability and problem-solving by observing senior engineers in action. This set the stage for my technical growth and problem-solving mindset.",
     tech: [],
-    projectImages: [Images],
+    projectImages: [Alarm, Chiller],
   },
   {
     title: "3K Battery (Thai Energy Storage Welder Machine)",
@@ -288,6 +296,6 @@ export const timelineData: TimelineItemType[] = [
       "JWT",
       "OpenLibrary API",
     ],
-    projectImages: [Alarm, Chiller],
+    projectImages: [TurnixxLanding, TurnixxExplore, TurnixxProduct, TurnixxLogin, TurnixxAccount],
   },
 ];
