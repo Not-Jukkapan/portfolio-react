@@ -1,7 +1,15 @@
 // TCP - Redbull
 import Images from "../assets/images/tcp-redbull/alarm.png";
-import Alarm from "../assets/images/tcp-redbull/alarm.png";
-import Chiller from "../assets/images/tcp-redbull/chiller.png";
+import TcpAlarm from "../assets/images/tcp-redbull/alarm.png";
+import TcpChiller from "../assets/images/tcp-redbull/chiller.png";
+import TcpCleaning from "../assets/images/tcp-redbull/cleaning.png";
+import TcpExhaust from "../assets/images/tcp-redbull/exhaust.png";
+import TcpManhour from "../assets/images/tcp-redbull/manhour.png";
+import TcpOverview from "../assets/images/tcp-redbull/overview.png";
+import TcpSetting from "../assets/images/tcp-redbull/setting.png";
+import TcpStartMotor from "../assets/images/tcp-redbull/startmotor.png";
+import TcpTrendExhuast from "../assets/images/tcp-redbull/trend-exhaust.png";
+import TcpHumidity from "../assets/images/tcp-redbull/trend-humidity.png";
 
 // Turnixx
 import TurnixxLanding from "../assets/images/turnixx/landing.png";
@@ -34,7 +42,7 @@ export const timelineData: TimelineItemType[] = [
     story:
       "My entry into the world of automation. Though my tasks were junior-level, I learned valuable lessons in adaptability and problem-solving by observing senior engineers in action. This set the stage for my technical growth and problem-solving mindset.",
     tech: [],
-    projectImages: [Alarm, Chiller],
+    projectImages: [],
   },
   {
     title: "3K Battery (Thai Energy Storage Welder Machine)",
@@ -174,7 +182,7 @@ export const timelineData: TimelineItemType[] = [
       "CSS",
       "JavaScript",
     ],
-    projectImages: [Images],
+    projectImages: [TcpAlarm, TcpChiller, TcpCleaning, TcpExhaust, TcpManhour, TcpOverview, TcpSetting, TcpStartMotor, TcpTrendExhuast, TcpHumidity],
   },
   {
     title: "DTS - BMW - TYSK (Electric Car Battery Commissioning)",

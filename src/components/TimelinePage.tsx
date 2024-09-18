@@ -75,7 +75,7 @@ const TimeLinePage: React.FC = () => {
                     onChange={(e) => setOrder(e.target.value as 'newToOld' | 'oldToNew')}
                     className="p-2 border rounded"
                 >
-                    <option value="oldToNew">Oldest First</option> 
+                    <option value="oldToNew">Oldest First</option>
                     <option value="newToOld">Newest First</option>
                 </select>
             </div>
@@ -186,9 +186,18 @@ const YearMarker: React.FC<YearMarkerProps> = ({ year, isToggled, toggleYear }) 
 const TimelineItem: React.FC<TimelineItemProps & { onClick: () => void }> = ({ item, index, colorBg, colorText, colorTextLight, colorBgLight, onClick }) => {
     return (
         <div className={`mb-12 flex w-full ${item.field === 'webdev' ? 'flex-row-reverse lg:translate-x-6' : 'lg:flex-row flex-row-reverse lg:-translate-x-6'} items-center justify-between lg:justify-start`} >
-            <div onClick={onClick} className="cursor-pointer lg:w-1/2 lg:px-4 w-5/6">
+            <div className="lg:w-1/2 lg:px-4 w-5/6">
                 <div className="bg-gray-50 p-6 rounded-lg shadow-lg hover:bg-gray-100 hover:bg-opacity-30">
-                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">{item.title}</h3>
+                    <div className="text-base flex justify-between sm:text-lg md:text-xl lg:text-2xl font-bold  ">
+                        <span>
+
+                            {item.title}
+                        </span>
+                        {item.projectImages.length > 0 && (
+
+                            <button onClick={onClick} className="cursor-pointer  underline text-sm font-normal text-blue-600">see more</button>
+                        )}
+                    </div>
                     <div className="text-xs sm:text-sm md:text-base text-gray-600">{item.dateText}</div>
                     <p className="mt-2 text-sm sm:text-base md:text-lg">{item.description}</p>
                     <p className={`mt-4 italic ${colorTextLight(item.field)} text-sm sm:text-base md:text-lg`}>
