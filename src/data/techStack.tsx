@@ -9,6 +9,7 @@ import VueIcon from "../assets/icons/Frontend/vuejs.svg";
 import QuasarIcon from "../assets/icons/Frontend/Quasar.svg";
 import ZustandIcon from "../assets/icons/Frontend/zustand.svg";
 import PiniaIcon from "../assets/icons/Frontend/Pinialogo.svg";
+import NextJSIcon from "../assets/icons/Frontend/nextjs.svg"
 
 
 // Backend Icons
@@ -41,6 +42,7 @@ export const techStack = [
             { name: "JavaScript", icon: JavascriptIcon },
             { name: "TypeScript", icon: TypeScriptIcon },
             { name: "Zustand", icon: ZustandIcon },
+            { name: "NextJS", icon: NextJSIcon },
             { name: "Vue", icon: VueIcon },
             { name: "Quasar", icon: QuasarIcon },
             { name: "Pinia", icon: PiniaIcon },
