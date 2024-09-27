@@ -15,6 +15,7 @@ import PiniaIcon from "../assets/icons/Frontend/Pinialogo.svg";
 import NodeJsIcon from "../assets/icons/Backend/nodejs.svg";
 import ExpressIcon from "../assets/icons/Backend/express.svg";
 import NodeRedIcon from "../assets/icons/Backend/node-red.svg";
+import CSharpIcon from "../assets/icons/Backend/CSharp.svg";
 import MySQLIcon from "../assets/icons/Backend/mysql.svg";
 import SQLServerIcon from "../assets/icons/Backend/sqlserver.svg";
 import PostgresqlIcon from "../assets/icons/Backend/postgresql.svg";
@@ -25,6 +26,11 @@ import SiemensIcon from "../assets/icons/FactoryAutomation/siemens.svg";
 import WinCCIcon from "../assets/icons/FactoryAutomation/wincc.jpg";
 import WonderwareIcon from "../assets/icons/FactoryAutomation/wonderware.svg";
 
+// Tools
+import DockerIcon from "../assets/icons/Tools/docker.svg";
+import PostmanIcon from "../assets/icons/Tools/postman-icon-svgrepo-com.svg";
+
+
 
 export const techStack = [
     {
@@ -34,12 +40,12 @@ export const techStack = [
             { name: "Tailwind CSS", icon: TailwindIcon },
             { name: "JavaScript", icon: JavascriptIcon },
             { name: "TypeScript", icon: TypeScriptIcon },
-            { name: "HTML", icon: HTML5Icon },
-            { name: "CSS", icon: CSSIcon },
+            { name: "Zustand", icon: ZustandIcon },
             { name: "Vue", icon: VueIcon },
             { name: "Quasar", icon: QuasarIcon },
-            { name: "Zustand", icon: ZustandIcon },
             { name: "Pinia", icon: PiniaIcon },
+            { name: "HTML", icon: HTML5Icon },
+            { name: "CSS", icon: CSSIcon },
         ]
     },
     {
@@ -48,9 +54,17 @@ export const techStack = [
             { name: "Node.js", icon: NodeJsIcon },
             { name: "Express.js", icon: ExpressIcon },
             { name: "Node-Red", icon: NodeRedIcon },
+            { name: "C#", icon: CSharpIcon },
             { name: "MySQL", icon: MySQLIcon },
             { name: "Microsoft SQL Server", icon: SQLServerIcon },
             { name: "PostgreSQL", icon: PostgresqlIcon },
+        ]
+    },
+    {
+        category: "Tools",
+        stack: [
+            { name: "Docker", icon: DockerIcon },
+            { name: "Postman", icon: PostmanIcon },
         ]
     },
     {
@@ -60,7 +74,7 @@ export const techStack = [
             { name: "WinCC", icon: WinCCIcon },
             { name: "Wonderware", icon: WonderwareIcon },
         ]
-    }
+    },
 ];
 
 
